@@ -9,7 +9,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     /** Массив объектов*/
-    items: []
+    items: [],
+    /** Массив с историей изменений*/
+    history: []
   },
   getters,
   mutations,

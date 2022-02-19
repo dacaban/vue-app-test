@@ -23,10 +23,10 @@ export default {
   },
   computed: {
     selectedItems() {
-      return this.$store.getters.getSelectedItemsList;
+      return this.$store.getters.getItemsList(true);
     },
     unselectedItems() {
-      return this.$store.getters.getUnselectedItemsList;
+      return this.$store.getters.getItemsList(false);
     }
   },
   mounted() {
@@ -43,7 +43,6 @@ export default {
 .board {
   display: flex;
   justify-content: stretch;
-  margin: 20px;
   padding: 20px 10px;
   box-sizing: border-box;
   border: 1px solid #cdcdcd;
