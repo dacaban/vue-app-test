@@ -3,12 +3,11 @@
   <div class="item">
     <div class="item__header">
       <h3 class="item__name">{{ name }}</h3>
-      <input
+      <Button
         class="item__button"
-        :style="{ backgroundImage: `url(${buttonIcon})` }"
-        type="button"
+        :icon="buttonIcon"
         @click="changeSelection"
-      >
+      />
     </div>
     <ul
       v-if="items.length"
@@ -26,6 +25,7 @@
 </template>
 
 <script>
+import Button from './Button';
 export default {
   name: 'Item',
   props: {
@@ -35,12 +35,15 @@ export default {
     buttonIcon: String,
     selected: Boolean
   },
+  components: {
+    Button
+  },
   methods: {
     /**
      * Изменяет состояние выбора элемента на противоположное
      */
     changeSelection() {
-      this.$store.commit('CHANGE_ITEM_SELECTION', { id: this.id, selected: !this.selected });
+      this.$store.dispatch('changeItemSelection', { id: this.id, selected: !this.selected });
     }
   }
 };
@@ -61,21 +64,8 @@ export default {
   }
 
   &__button {
-    background-color: #b7e3f7;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 10px;
-    border: none;
-    padding: 0;
-    cursor: pointer;
     width: 20px;
     height: 20px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgb(27 27 34 / 15%);
-
-    &:hover {
-      background-color: #8ad2ea;
-    }
   }
 
   &__name {
