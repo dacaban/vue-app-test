@@ -1,20 +1,28 @@
 # vue-app-test
 Тестовое задание на Vue.js
 
-## Project setup
+## Установка проекта
+
+Для установки зависимостей выполните команду:
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Компиляция и горячая перезагрузка для разработки
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Компиляция и сжатие для развертывания проекта
+
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Особенности
+
+В проекте используется локальный сервер на node.js ([ссылка на github](https://github.com/dacaban/nodejs-test)).
+Для работы приложения необходимо поднять его локально либо изменить адрес для
+загрузки данных [здесь](./src/components/Board.vue).
