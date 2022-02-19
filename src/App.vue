@@ -1,5 +1,7 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -12,6 +14,7 @@ export default {
 html,
 body,
 #app {
+  background: #f7f9fc;
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
